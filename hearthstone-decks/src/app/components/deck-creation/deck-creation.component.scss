@@ -1,0 +1,40 @@
+.checkbox--holder {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    padding: 1rem;
+    max-width: 1200px;
+    margin-inline: auto;
+}
+
+.radio--class {
+    display: none;
+}
+
+.radio--class:checked ~ .radio--image {
+   border: 10px solid red;
+}
+
+.radio--image {
+    width: 100%;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+}
+
+@media(min-width: 30rem) {
+    .checkbox--holder {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media(min-width: 50rem) {
+    .checkbox--holder {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+
+@media(min-width: 70rem) {
+    .checkbox--holder {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+}
