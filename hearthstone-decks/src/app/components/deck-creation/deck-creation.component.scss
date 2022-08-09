@@ -1,3 +1,15 @@
+.form--header {
+    font-size: 1.5rem;
+    color: #fff;
+    font-weight: 800;
+    width: 100%;
+    text-align: center;
+}
+
+.form--group {
+    margin-bottom: 1rem;
+}
+
 .checkbox--holder {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -7,33 +19,66 @@
     margin-inline: auto;
 }
 
+.label--checkbox {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 1/1;
+}
+
 .radio--class {
     display: none;
 }
 
 .radio--class:checked ~ .radio--image {
-   border: 10px solid red;
+   outline: 5px solid #660ea4;
+   border: 5px solid #660ea4;
 }
 
 .radio--image {
     width: 100%;
     aspect-ratio: 1/1;
     object-fit: cover;
+    transition: all 200ms ease;
+    border: 5px solid #2b3146;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.radio--image:hover {
+    transform: scale(1.05);
+}
+
+.radio--image:hover ~ .radio--text {
+    transform: translateY(-0.25rem)
+}
+
+
+.radio--text {
+    position: absolute;
+    bottom: 1rem;
+    width: 100%;
+    text-align: center;
+    color: #fff;
+    font-weight: 800;
+    font-size: 1rem;
+    transition: all 200ms ease;
 }
 
 @media(min-width: 30rem) {
     .checkbox--holder {
         grid-template-columns: 1fr 1fr;
     }
-}
 
-@media(min-width: 50rem) {
-    .checkbox--holder {
-        grid-template-columns: 1fr 1fr 1fr;
+    .radio--text {
+        font-size: 1.5rem;
+    }
+
+    .form--header {
+        font-size: 2rem;
     }
 }
 
-@media(min-width: 70rem) {
+@media(min-width: 50rem) {
     .checkbox--holder {
         grid-template-columns: 1fr 1fr 1fr 1fr;
     }

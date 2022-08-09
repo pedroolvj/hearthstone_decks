@@ -2,29 +2,28 @@
     <form 
         action=""
         class="form--body"
+        [formGroup]="newDeck"
+        (ngSubmit)="onSubmit()"
         novalidate
     >
         <div class="form--group">
-            <label for="">
-
+            <label class="deck--name" for="">
+                Nome do DECK
             </label>
-            <input type="text" name="" id="">
+            <input class="deck--input" type="text" name="" formControlName="deck_name">
         </div>
+
         <div class="form--group">
+            <h1 class="form--header">Selecione uma classe</h1>
             <div class="checkbox--holder">
-                <label class="label--checkbox">
-                    <input class="radio--class" type="radio" name="class" value="druid">
-                    <img class="radio--image" src="./../../../assets/heros/druid.jpg" alt="">
-                </label>
-                <label class="label--checkbox">
-                    <input class="radio--class" type="radio" name="class" value="druid">
-                    <img class="radio--image" src="./../../../assets/heros/druid.jpg" alt="">
-                </label>
-                <label class="label--checkbox">
-                    <input class="radio--class" type="radio" name="class" value="druid">
-                    <img class="radio--image" src="./../../../assets/heros/druid.jpg" alt="">
+                <label class="label--checkbox" *ngFor="let class of classList">
+                    <input class="radio--class" type="radio" value="{{class.value}}" formControlName="deck_class">
+                    <img class="radio--image" src="./../../../assets/heros/{{class.value}}.jpg" alt="">
+                    <span class="radio--text">{{class.name}}</span>
                 </label>
             </div>
         </div>
+
+        <button type="submit">Salvar</button>
     </form>
 </section>

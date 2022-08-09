@@ -7,11 +7,13 @@ export class UserDecksModel {
 }
 
 export class DecksModel {
-    cards: CardModel[];
+    id: string;
+    cards?: CardModel[];
     deck_name: string;
     deck_class: string;
 
     constructor() {
+        this.id = '';
         this.cards = [];
         this.deck_name = '';
         this.deck_class = '';
