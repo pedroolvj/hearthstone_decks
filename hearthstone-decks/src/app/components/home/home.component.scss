@@ -1,0 +1,120 @@
+.home--container {
+    width: 100%;
+}
+
+.heading--decks {
+    font-size: 2rem;
+    text-align: center;
+    color: #fff;
+    font-weight: 800;
+    margin-bottom: 1.5rem;
+}
+
+.decks--container {
+    width: 100%;
+    max-width: 1920px;
+    margin-inline: auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    padding-inline: 1rem;
+}
+
+.decks--container > * {
+    padding-block: 1rem;
+    margin-bottom: 1rem;
+}
+
+.deck--card {
+    width: 90%;
+    padding: 1rem;
+    background: #2b3146;
+    border-radius: 8px;
+    margin-inline: auto;
+    color: #fff;
+    text-align: center;
+}
+
+.deck--image {
+    width: 100%;
+    aspect-ratio: 1/1;
+}
+
+.deck--image > img {
+    width: 100%;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.deck--name {
+    font-weight: 500;
+    text-align: center;
+    padding-top: 1rem;
+}
+
+.deck--button {
+    width: 80%;
+    background: #42455a;
+    padding: 0.5rem;
+    display: block;
+    margin-inline: auto;
+    margin-top: 0.5rem;
+    border-radius: 8px;
+    font-weight: 800;
+    transition: all 200ms ease;
+}
+
+.deck--button:hover {
+    background-color: #212331;
+}
+
+.create--card {
+    aspect-ratio: 1/1;
+    background-color: #2b314661;
+    margin-block: auto !important;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: all 400ms ease;
+}
+
+.create--card:hover {
+    transform: scale(1.05);
+    background-color: #2c304e;
+}
+
+.plus--icon {
+    font-size: 10rem;
+    color: rgba(255, 255, 255, 0.193);
+}
+
+.create--text {
+    font-weight: 800;
+    font-size: 1.2rem;
+}
+
+@media(min-width: 30rem) {
+    .decks--container {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media(min-width: 50rem) {
+    .decks--container {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+
+@media(min-width: 70rem) {
+    .decks--container {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+}
+
+@media(min-width: 90rem) {
+    .decks--container {
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    }
+}

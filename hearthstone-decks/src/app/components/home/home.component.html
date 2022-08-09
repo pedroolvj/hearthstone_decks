@@ -1,0 +1,24 @@
+<section class="home--container">
+    <h1 class="heading--decks">My DECKS</h1>
+    <div class="decks--container">
+        <div class="deck--card" *ngFor="let deck of userDecks; index as i">
+            <div class="deck--image">
+                <img src="./../../../assets/heros/druid.jpg" alt="Deck photo">
+            </div>
+            <div class="deck--name">
+                Nome do deck bem bolado
+            </div>
+            <button class="deck--button">
+                Ver DECK
+            </button>
+        </div>
+        <div class="deck--card create--card" (click)="createDeck()">
+            <span class="material-symbols-outlined plus--icon">
+                add_box
+            </span>
+            <div class="create--text">
+                Criar DECK
+            </div>
+        </div>
+    </div>
+</section>
