@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 import { DecksModel, UserDecksModel } from 'src/app/models/decks.models';
+import { DeckEditorService } from './deck-editor.service';
 
 @Component({
   selector: 'app-deck-editor',
@@ -17,12 +18,15 @@ export class DeckEditorComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private formBuilder: FormBuilder,
+    private deckEditorService: DeckEditorService
   ) { }
 
   ngOnInit(): void {
     this.createDeck(new DecksModel)
     this.getDeckId()
     this.getDecks()
+
+    this.getCards()
   }
 
   createDeck(deck: DecksModel): void {
@@ -54,6 +58,21 @@ export class DeckEditorComponent implements OnInit {
     this.route.params.subscribe(params => {
       this.deckId = params.id
     });
+  }
+
+  onSubmit() {
+    if(this.selectedDeck.valid) {
+      let getIndex = this.userDecks.decks.findIndex(e => e.id == this.deckId)
+      this.userDecks.decks[getIndex].deck_name = this.selectedDeck.controls['deck_name'].value
+
+      localStorage.setItem('decks', JSON.stringify(this.userDecks.decks))
+    }
+  }
+
+  getCards() {
+    this.deckEditorService.getCards('mage').subscribe((data) => {
+      console.log(data)
+    })
   }
 
 }

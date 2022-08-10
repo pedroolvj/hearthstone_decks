@@ -1,3 +1,14 @@
+.edit--body {
+    padding-bottom: 4rem;
+}
+
+hr {
+    width: 90%;
+    max-width: 200px;
+    margin-inline: auto;
+    margin-block: 0.5rem;
+}
+
 .hero--body {
     position: relative;
     width: 100%;
@@ -25,6 +36,67 @@
 .class--name {
     font-size: 1rem;
     font-weight: 300;
+}
+
+.form--body {
+    margin-bottom: 2rem;
+}
+
+.form--group {
+    padding: 1rem;
+}
+
+.form--text {
+    font-size: 1.2rem;
+    color: #fff;
+    font-weight: 500;
+    width: 100%;
+    text-align: center;
+}
+
+.deck--input {
+    width: 100%;
+    max-width: 500px;
+    margin-inline: auto;
+    display: block;
+    outline: none;
+    background-color:#424756;
+    height: 2.5rem;
+    color: #fff;
+    padding: 1rem;
+    margin-top: 1rem;
+    border-radius: 8px;
+}
+
+.error--message {
+    display: block;
+    width: 100%;
+    max-width:  400px ;
+    background: #ff004ab8;
+    padding: 0.8em;
+    color: #fff;
+    font-weight: 300;
+    margin-inline: auto;
+    text-align: center;
+    border-radius: 8px;
+    font-size: 0.8rem;
+}
+
+
+button {
+    background-color: #424756;
+    padding: 0.5rem 2rem;
+    color: #fff;
+    font-weight: 800;
+    margin-inline: auto;
+    display: block;
+    border-radius: 8px;
+    font-size: 1.2rem;
+    transition: all 200ms ease;
+}
+
+button:hover {
+    background-color: #2b3146;
 }
 
 @media(min-width: 30rem) {

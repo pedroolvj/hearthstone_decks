@@ -6,4 +6,32 @@
             <br><span class="class--name">{{selectedDeck.value.deck_class.toLowerCase()}}</span>
         </div>
     </div>
+
+    <form
+        #localForm="ngForm"
+        [formGroup]="selectedDeck"
+        (ngSubmit)="onSubmit()"
+        novalidate
+        class="form--body"
+    >
+    <div class="form--group">
+        <h2 class="form--text" for="">
+            Nome do DECK
+        </h2>
+        <hr>
+        <div class="error--message" 
+            *ngIf="localForm.submitted && selectedDeck.controls['deck_name'].hasError('required')"
+        >
+            O nome do DECK é obrigatório.
+        </div>
+        <input class="deck--input" type="text" name="" formControlName="deck_name">
+    </div>
+
+    <button type="submit">Salvar novo nome</button>
+    </form>
+
+    <h2 class="form--text" for="">
+        Minhas Cartas
+    </h2>
+    <hr>
 </section>
