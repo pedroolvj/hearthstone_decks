@@ -1,0 +1,36 @@
+.hero--body {
+    position: relative;
+    width: 100%;
+    max-height: 30rem;
+    display: flex;
+    margin-bottom: 1rem;
+}
+
+.hero--img {
+    width: 100%;
+    object-fit: cover;
+}
+
+.deck--title {
+    position: absolute;
+    bottom: 1rem;
+    width: 100%;
+    text-align: center;
+    color: #fff;
+    font-weight: 800;
+    font-size: 1.4rem;
+    line-height: 1.2rem;
+}
+
+.class--name {
+    font-size: 1rem;
+    font-weight: 300;
+}
+
+@media(min-width: 30rem) {
+    .deck--title {
+        font-size: 2rem;
+        bottom: 2rem;
+        line-height: 1.5rem;
+    }
+}

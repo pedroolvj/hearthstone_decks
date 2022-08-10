@@ -1,1 +1,9 @@
-<p>deck-editor works!</p>
+<section class="edit--body">
+    <div class="hero--body">
+        <img src="./../../../assets/heros/{{selectedDeck.value.deck_class}}.jpg" alt="{{selectedDeck.value.deck_class}} Image" class="hero--img">
+        <div class="deck--title">
+            {{selectedDeck.value.deck_name.toUpperCase()}}
+            <br><span class="class--name">{{selectedDeck.value.deck_class.toLowerCase()}}</span>
+        </div>
+    </div>
+</section>

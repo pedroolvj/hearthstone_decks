@@ -14,10 +14,10 @@ export class DeckCreationComponent implements OnInit {
   userDecks: UserDecksModel = new UserDecksModel
 
   classList: Array<{name: string, value: string}> = [
-    {name: 'Druida', value: 'druid'},
-    {name: 'Mago', value: 'mage'},
-    {name: 'Paladino', value: 'paladin'},
-    {name: 'Caçador', value: 'hunter'}
+    {name: 'Druid', value: 'druid'},
+    {name: 'Mage', value: 'mage'},
+    {name: 'Paladin', value: 'paladin'},
+    {name: 'Hunter', value: 'hunter'}
   ]
   
   constructor(
@@ -51,7 +51,7 @@ export class DeckCreationComponent implements OnInit {
       this.userDecks.decks.push(this.newDeck.value)
       localStorage.setItem('decks', JSON.stringify(this.userDecks.decks))
     
-      this.router.navigate(['/edit-deck'])
+      this.router.navigate([`/edit-deck/${this.newDeck.controls['id'].value}`])
     }
   }
 }
