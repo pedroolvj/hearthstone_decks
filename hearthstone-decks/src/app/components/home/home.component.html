@@ -1,14 +1,14 @@
 <section class="home--container">
     <h1 class="heading--decks">My DECKS</h1>
     <div class="decks--container">
-        <div class="deck--card" *ngFor="let deck of userDecks; index as i">
+        <div class="deck--card" *ngFor="let deck of userDecks.decks">
             <div class="deck--image">
-                <img src="./../../../assets/heros/druid.jpg" alt="Deck photo">
+                <img src="./../../../assets/heros/{{deck.deck_class}}.jpg" alt="Deck photo">
             </div>
             <div class="deck--name">
-                Nome do deck bem bolado
+                {{deck.deck_name}}
             </div>
-            <button class="deck--button">
+            <button class="deck--button" (click)="editDeck(deck.id)">
                 Ver DECK
             </button>
         </div>

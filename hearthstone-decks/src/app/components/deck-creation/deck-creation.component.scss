@@ -1,3 +1,7 @@
+.create--body {
+    padding-bottom: 4rem;
+}
+
 .form--header {
     font-size: 1.5rem;
     color: #fff;
@@ -6,8 +10,37 @@
     text-align: center;
 }
 
+hr {
+    width: 90%;
+    max-width: 200px;
+    margin-inline: auto;
+    margin-block: 0.5rem;
+}
+
+.form--text {
+    font-size: 1.2rem;
+    color: #fff;
+    font-weight: 500;
+    width: 100%;
+    text-align: center;
+}
+
 .form--group {
-    margin-bottom: 1rem;
+    padding: 1rem;
+}
+
+.deck--input {
+    width: 100%;
+    max-width: 500px;
+    margin-inline: auto;
+    display: block;
+    outline: none;
+    background-color:#424756;
+    height: 2.5rem;
+    color: #fff;
+    padding: 1rem;
+    margin-top: 1rem;
+    border-radius: 8px;
 }
 
 .checkbox--holder {
@@ -64,6 +97,36 @@
     transition: all 200ms ease;
 }
 
+.error--message {
+    display: block;
+    width: 100%;
+    max-width:  400px ;
+    background: #ff004ab8;
+    padding: 0.8em;
+    color: #fff;
+    font-weight: 300;
+    margin-inline: auto;
+    text-align: center;
+    border-radius: 8px;
+    font-size: 0.8rem;
+}
+
+button {
+    background-color: #424756;
+    padding: 0.8rem 2rem;
+    color: #fff;
+    font-weight: 800;
+    margin-inline: auto;
+    display: block;
+    border-radius: 8px;
+    font-size: 1.2rem;
+    transition: all 200ms ease;
+}
+
+button:hover {
+    background-color: #2b3146;
+}
+
 @media(min-width: 30rem) {
     .checkbox--holder {
         grid-template-columns: 1fr 1fr;
@@ -71,10 +134,6 @@
 
     .radio--text {
         font-size: 1.5rem;
-    }
-
-    .form--header {
-        font-size: 2rem;
     }
 }
 

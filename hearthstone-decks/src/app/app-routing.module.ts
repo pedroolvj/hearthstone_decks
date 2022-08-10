@@ -15,7 +15,7 @@ const routes: Routes = [
     component: DeckCreationComponent,
   },
   {
-    path: 'edit-deck',
+    path: 'edit-deck/:id',
     component: DeckEditorComponent,
   },
   {

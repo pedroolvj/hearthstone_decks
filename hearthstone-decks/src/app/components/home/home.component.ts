@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { DecksModel } from 'src/app/models/decks.models';
+import { DecksModel, UserDecksModel } from 'src/app/models/decks.models';
 
 @Component({
   selector: 'app-home',
@@ -9,7 +9,7 @@ import { DecksModel } from 'src/app/models/decks.models';
 })
 export class HomeComponent implements OnInit {
   
-  userDecks: Array<DecksModel>[] = JSON.parse(localStorage.getItem('decks') || '[]')
+  userDecks: UserDecksModel = new UserDecksModel
   newDeck: DecksModel = new DecksModel
 
   constructor(
@@ -17,11 +17,20 @@ export class HomeComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-
+    this.getDecks()
+    console.log(this.userDecks.decks)
   }
 
-  createDeck() {
+  getDecks(): void {
+    this.userDecks.decks =  JSON.parse(localStorage.getItem('decks') || '[]')
+  }
+
+  createDeck(): void {
     this.router.navigate(['/create-deck'])
+  }
+
+  editDeck(id: string): void {
+    this.router.navigate([`/edit-deck/${id}`])
   }
 
 }

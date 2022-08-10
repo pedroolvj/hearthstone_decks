@@ -40,14 +40,13 @@ export class DeckCreationComponent implements OnInit {
       cards: [deck.cards],
       deck_name: [deck.deck_name, Validators.required],
       deck_class: [deck.deck_class, Validators.required]
-    })
+    }, {updateOn: 'submit'}
+    )
 
     this.newDeck.controls['id'].setValue(uuid())
   }
 
   onSubmit(): void {
-    console.log(this.newDeck.value)
-
     if(this.newDeck.valid) {
       this.userDecks.decks.push(this.newDeck.value)
       localStorage.setItem('decks', JSON.stringify(this.userDecks.decks))

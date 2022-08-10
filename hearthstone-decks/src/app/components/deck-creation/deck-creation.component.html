@@ -2,19 +2,36 @@
     <form 
         action=""
         class="form--body"
+        #localForm="ngForm"
         [formGroup]="newDeck"
         (ngSubmit)="onSubmit()"
         novalidate
     >
+
+        <h1 class="form--header">
+            Cadastrar novo DECK
+        </h1>
+        <hr>
+
         <div class="form--group">
-            <label class="deck--name" for="">
+            <h2 class="form--text" for="">
                 Nome do DECK
-            </label>
+            </h2>
+            <div class="error--message" 
+                *ngIf="localForm.submitted && newDeck.controls['deck_name'].hasError('required')"
+            >
+                O nome do DECK é obrigatório.
+            </div>
             <input class="deck--input" type="text" name="" formControlName="deck_name">
         </div>
 
         <div class="form--group">
-            <h1 class="form--header">Selecione uma classe</h1>
+            <h2 class="form--text">Selecione uma classe</h2>
+            <div class="error--message"
+                *ngIf="localForm.submitted && newDeck.controls['deck_class'].hasError('required')"
+            >
+                Selecionar uma classe é obrigatório.
+            </div>
             <div class="checkbox--holder">
                 <label class="label--checkbox" *ngFor="let class of classList">
                     <input class="radio--class" type="radio" value="{{class.value}}" formControlName="deck_class">
