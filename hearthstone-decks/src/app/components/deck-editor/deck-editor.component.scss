@@ -82,7 +82,6 @@ hr {
     font-size: 0.8rem;
 }
 
-
 button {
     background-color: #424756;
     padding: 0.5rem 2rem;
@@ -99,10 +98,193 @@ button:hover {
     background-color: #2b3146;
 }
 
-@media(min-width: 30rem) {
+.user--deck {
+    padding: 2rem;
+    overflow: auto;
+    max-width: 1600px;
+    margin-inline: auto;
+}
+
+.table--deck {
+    color: #fff;
+    background-color: #2b3146;
+    border: 3px solid #605a4d;
+    border-style: inset;
+    width: 100%;
+}
+
+.table--deck tr,
+.table--deck th,
+.table--deck td {
+    border: 3px solid #605a4d;
+    border-style: inset;
+}
+
+.table--deck td {
+    border-style: inset;
+    text-align: center;
+    font-weight: 300;
+}
+
+.table--deck img {
+    width: 5rem;
+    margin-inline: auto;
+}
+
+.table--delete {
+    padding: 1rem;
+    padding-bottom: 0.5rem;
+    background-color: #812725;
+}
+
+.table--delete:hover {
+    background-color: #c33634;
+}
+
+.empty--text {
+    color: #fff;
+    width: 100%;
+    text-align: center;
+    padding: 4rem;
+    font-weight: 300;
+}
+
+.all--cards {
+    display: grid;
+    grid-template-columns: 1fr;
+    max-width: 1600px;
+    margin-inline: auto;
+}
+
+.card--holder {
+    display: grid;
+    grid-template-areas:
+     "id name"
+     "img img"
+     "atk def"
+     "type class"
+     "ctrl ctrl";
+    padding: 1rem 1.5rem;
+}
+
+.header--fields {
+    font-weight: 800;
+    color: #fff;
+}
+
+.id--holder,
+.name--holder,
+.img--holder,
+.atk--holder,
+.def--holder,
+.type--holder,
+.class--holder,
+.controls--holder {
+    border: 3px solid #605a4d;
+    color: #c7cd73;
+    display: flex;
+    flex-direction: column;
+    background-color: #2b3146;
+    border-style: outset;
+    padding: 0.25rem;
+    font-weight: 500;
+    justify-content: center;
+    align-items: center;
+}
+
+.controllers {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+    margin-block: 0.25rem;
+    color: #fff;
+}
+
+.controllers > * {
+    margin-right: 0.5rem;
+}
+
+.btn--ctrl {
+    padding: 0.1rem 0.7rem;
+    font-size: 1.2rem;
+    border-radius: 100%;
+}
+
+.rmv {
+    background-color: #812725;
+}
+
+.rmv:hover {
+    background-color: #c33634;
+}
+
+.add {
+    background-color: #3232a5;
+}
+
+.add:hover {
+    background-color: #4545ec;
+}
+
+.rmv:disabled,
+.add:disabled {
+    background-color: #353534;
+}
+
+
+.id--holder {
+    grid-area: id;
+}
+
+.name--holder {
+    grid-area: name;
+}
+
+.img--holder {
+    grid-area: img;
+}
+
+.atk--holder {
+    grid-area: atk;
+}
+
+.def--holder {
+    grid-area: def;
+}
+
+.type--holder {
+    grid-area: type;
+}
+
+.class--holder {
+    grid-area: class;
+}
+
+.controls--holder {
+    grid-area: ctrl;
+}
+
+@media(min-width: 40rem) {
     .deck--title {
         font-size: 2rem;
         bottom: 2rem;
         line-height: 1.5rem;
+    }
+
+    .all--cards {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media(min-width: 70rem) {
+    .all--cards {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+
+@media(min-width: 100rem) {
+    .all--cards {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
     }
 }

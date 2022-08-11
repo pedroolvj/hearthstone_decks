@@ -10,5 +10,11 @@
 
 .img--logo {
     width: 80%; 
-    max-width: 30rem
+    max-width: 30rem;
+    transition: all 200ms ease;
+    cursor: pointer;
+}
+
+.img--logo:hover {
+    transform: scale(1.05);
 }

@@ -18,7 +18,6 @@ export class HomeComponent implements OnInit {
 
   ngOnInit(): void {
     this.getDecks()
-    console.log(this.userDecks.decks)
   }
 
   getDecks(): void {

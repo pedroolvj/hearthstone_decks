@@ -23,22 +23,39 @@ export class DecksModel {
 export class CardModel {
     id: number;
     name: string;
-    description: string;
+    flavorText: string;
     attack: number;
     health: number;
-    type: number;
+    cardTypeId: number;
     class: string;
     qnty: number;
+    durability!: number;
+    image: string
 
     constructor() {
         this.id = 0;
         this.name = '';
-        this.description = '';
+        this.flavorText = '';
         this.attack = 0;
         this.health = 0;
-        this.type = 0;
+        this.cardTypeId = 0;
         this.class = '';
         this.qnty = 0;
+        this.image = ''
     }
     
+}
+
+export class ServiceModel {
+    cardCount: number;
+    cards: CardModel[];
+    page: number;
+    pageCount: number;
+
+    constructor() {
+        this.cardCount = 0;
+        this.cards =  [];
+        this.page = 0;
+        this.pageCount = 0;
+    }
 }

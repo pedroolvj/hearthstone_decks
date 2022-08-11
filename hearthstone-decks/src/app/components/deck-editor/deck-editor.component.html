@@ -34,4 +34,86 @@
         Minhas Cartas
     </h2>
     <hr>
+
+    <div class="user--deck" *ngIf="selectedDeck.controls['cards'].value.length > 0">
+        <table class="table--deck">
+            <tr>
+                <th>Foto</th>
+                <th>ID</th>
+                <th>Nome</th>
+                <th>Ataque</th>
+                <th>Defesa</th>
+                <th>Tipo</th>
+                <th>Classe</th>
+                <th>Excluir</th>
+            </tr>
+            <tr *ngFor="let card of selectedDeck.controls['cards'].value">
+                <td>
+                    <img src="{{card.image}}" alt="">
+                </td>
+                <td>{{card.id}}</td>
+                <td>{{card.name}}</td>
+                <td>{{card.attack}}</td>
+                <td>{{card.health}}</td>
+                <td>{{card.cardTypeId}}</td>
+                <td>{{card.class.toUpperCase()}}</td>
+                <td>
+                    <button (click)="removeCard(card)"  class="table--delete">
+                        <span class="material-symbols-outlined">
+                            delete
+                        </span>
+                    </button>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="empty--text" *ngIf="selectedDeck.controls['cards'].value.length == 0">
+        Seu DECK está vazio...
+    </div>
+
+    <h2 class="form--text" for="">
+        Todas as cartas
+    </h2>
+    <hr>
+
+    <div class="all--cards">
+        <div class="card--holder" *ngFor="let card of setAllCards">
+            <div class="id--holder">
+                <span class="header--fields">ID</span>
+                {{card.id}}
+            </div>
+            <div class="name--holder">
+                <span class="header--fields">Nome</span>
+                {{card.name}}
+            </div>
+            <div class="img--holder">
+                <img src="{{card.image}}" alt="{{card.name}}">
+            </div>
+            <div class="atk--holder" *ngIf="card.attack !== undefined">
+                <span class="header--fields">Ataque</span>
+                {{card.attack}}
+            </div>
+            <div class="def--holder" *ngIf="card.health !== undefined">
+                <span class="header--fields">Defesa</span>
+                {{card.health}}
+            </div>
+            <div class="type--holder">
+                <span class="header--fields">Tipo da carta</span>
+                {{card.cardTypeId}}
+            </div>
+            <div class="class--holder">
+                <span class="header--fields">Classe</span>
+                {{card.class.toUpperCase()}}
+            </div>
+            <div class="controls--holder">
+                <span class="header--fields">{{card.qnty == 0 ? 'Adicionar ao deck' : 'Adicionar ou remover do deck'}}</span>
+                <div class="controllers">
+                    <button (click)="removeCard(card)" class="btn--ctrl rmv" [disabled]="card.qnty == 0">-</button>
+                    <span>{{card.qnty}}</span>
+                    <button (click)="addCard(card)" class="btn--ctrl add" [disabled]="card.qnty == 2 || selectedDeck.controls['cards'].value.length === 30">+</button>
+                </div>
+            </div>
+        </div>
+    </div>
 </section>

@@ -7,7 +7,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { DeckCreationComponent } from './components/deck-creation/deck-creation.component';
 import { DeckEditorComponent } from './components/deck-editor/deck-editor.component';
-import { ListCardsComponent } from './components/list-cards/list-cards.component';
 import { HomeComponent } from './components/home/home.component';
 
 @NgModule({
@@ -15,7 +14,6 @@ import { HomeComponent } from './components/home/home.component';
     AppComponent,
     DeckCreationComponent,
     DeckEditorComponent,
-    ListCardsComponent,
     HomeComponent
   ],
   imports: [

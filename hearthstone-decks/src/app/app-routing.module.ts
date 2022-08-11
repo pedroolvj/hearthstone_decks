@@ -3,7 +3,6 @@ import { RouterModule, Routes } from '@angular/router';
 import { DeckCreationComponent } from './components/deck-creation/deck-creation.component';
 import { DeckEditorComponent } from './components/deck-editor/deck-editor.component';
 import { HomeComponent } from './components/home/home.component';
-import { ListCardsComponent } from './components/list-cards/list-cards.component';
 
 const routes: Routes = [
   {
@@ -17,10 +16,6 @@ const routes: Routes = [
   {
     path: 'edit-deck/:id',
     component: DeckEditorComponent,
-  },
-  {
-    path: 'card-list',
-    component: ListCardsComponent
   },
   {
     path: '',
